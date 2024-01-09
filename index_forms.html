@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Добавление нового продукта</h2>
+    <form>
+        <!-- если не указывать action у form, то укажет на текущую страницу -->
+        <label>
+           <p>Название продукта</p> 
+              <input type="text" name="name" placeholder="Велосипед">
+              <!-- placeholder это подсказка в поле ввода, будет серым цветом-->
+        </label>
+        <label >
+                <p>Цена:</p>
+             <input type="number" min="0" step="0.01" name="price" placeholder="10000">
+        </label>
+        
+        <label >
+            <p>Количество:</p> 
+            <input type="number" min="0" max="10" name="count" placeholder="<=10">
+        </label>
+        <label >
+            <p>Категория:</p> 
+            <!-- реализация выпадающего меню -->
+            <select name="category">
+                <option value="sport">спорт</option>
+                <option value="countryhouse">дача</option>
+                <option value="home">дом</option>
+                <option value="hobby">хобби</option>
+                <option value="gift">подарки</option>
+            </select>
+            <input type="number" min="0" max="10" name="count" placeholder="<=10">
+        </label>
+        <!--  добавим описание -->
+        <p>Описание:</p>
+        <textarea name="description" placeholder="Расскажите о товаре"></textarea>
+        <button>Отправить</button>
+    </form>
+    <!-- создать форму аутентификации 
+        у данной формы должны быть два поля ввода (логин и пароль)
+        и кнопка отправки формы -->
+        <h2>Форма аутентификации</h2>
+        <form>
+<label>
+    <p>Имя пользователя</p>
+    <input type="text" name="login" placeholder="Enter your login">
+</label>
+<label>
+    <p>Пароль пользователя</p>
+    <input type="password" name="password" placeholder="Enter your password">
+    <!-- type="password" скрывает пароль, показывает пароль кружочками -->
+</label>
+<button>Войти</button>
+        </form>
+
+        <!-- обработка post запроса через сервер по адресу ниже -->
+        <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+            <input type="text" name="title" placeholder="title">
+            <input type="text" name="body" placeholder="body">
+            <input type="number" name="userId" placeholder="userId">
+            <button>Отправить</button>
+        </form>
+</body>
+</html>

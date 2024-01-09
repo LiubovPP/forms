@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title> 
+    <!-- делаю по аналогии с нашей работой на уроке 
+    Сделала основу! но конечно стили пока из нета, но что-то новенькое :) 
+    -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Задание: Создание регистрационной формы
+
+Создайте HTML-страницу с заголовком "Регистрация".
+Внутри страницы добавьте форму с использованием тега <form>.
+Добавьте следующие поля ввода:
+Имя (текстовое поле)
+Фамилия (текстовое поле)
+Электронная почта (текстовое поле с типом email)
+Пароль (поле для ввода пароля)
+Пол (выбор из опций: Мужской, Женский, Другой)
+Дата рождения (поле для ввода даты)
+Согласие с условиями использования (чекбокс)
+Добавьте кнопку "Зарегистрироваться" для отправки формы.
+Примените атрибуты required к полям по выбору, чтобы обеспечить обязательное заполнение.
+Подсказка: Используйте различные типы полей ввода, атрибуты и метки (теги <label>) для лучшей доступности и пользовательского опыта.
+
+Учтите, что это всего лишь основа, и по желанию вы можете расширить форму и добавить стили для лучшего визуального восприятия. -->
+
+    <h2>Регистрация</h2>
+    <form action="" method="post"> 
+        <!-- method="post"для передачи данных в теле запроса, а не в url -->
+        <label >
+            <p>Имя</p>
+            <input type="text" name="userFirstName" placeholder="Enter your name" required>
+            <!-- атрибут required к полям по выбору, чтобы обеспечить обязательное заполнение. -->
+        </label>
+        <label >
+            <p>Фамилия</p>
+            <input type="text" name="userLastName" placeholder="Enter yourlastname" required>
+        </label>
+        <label >
+            <p>Электронная почта</p>
+            <input type="email" name="email" placeholder="Enter your email" required>
+        </label>
+        <label >
+            <p>Ваш пароль</p>
+            <input type="password" name="password" placeholder="Enter your password" required>
+        </label>
+        <label >
+            <p>Пол:</p> 
+            <!-- реализация выпадающего меню для выбора пола -->
+            <select name="gender">
+                <option value="male">мужской</option>
+                <option value="female">женский</option>
+                <option value="other">другое</option>
+                     </select>
+        </label>
+        <label >
+            <p>Дата рождения:</p> 
+            <input type="date" name="birthdate" placeholder="Enter your birthdate" required>
+        </label>
+        <label >
+            <p>Согласие с условиями использования</p> 
+            <input type="checkbox" name="agreement" required>
+        </label><!-- type "checkbox" чтобы поставить галочку-->
+        <p></p> 
+        <!-- делаю отступ, зачем все слеплять -->
+        <button type="submit">Зарегистрироваться</button>
+        
+    </form>
+</body>
+</html>
